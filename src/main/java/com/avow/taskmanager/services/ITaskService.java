@@ -20,4 +20,6 @@ public interface ITaskService {
      Mono<Task> update(Task task);
 
      void delete(Long id);
+     
+     Mono<Task> completeTask(Long id);
 }

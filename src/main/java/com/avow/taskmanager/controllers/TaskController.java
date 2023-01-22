@@ -39,15 +39,15 @@ public class TaskController {
     @GetMapping("/complete/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Mono<Task> completeTaskById(@PathVariable Long id){
-    	 Task task = iTaskService.getTaskById(id).block();
-    	 task.setStatus("completed");
-    	 return iTaskService.update(task);
+    	 return iTaskService.completeTask(id);
     	 
     	}
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Mono<Task> saveTask(@RequestBody Task task){ return iTaskService.add(task);}
+    public Mono<Task> saveTask(@RequestBody Task task){
+    	return iTaskService.add(task);
+    	}
 
 
     @PutMapping

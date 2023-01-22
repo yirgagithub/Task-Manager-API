@@ -19,6 +19,8 @@ public interface ITaskRepository {
 	    Mono<Task> update(Task task);
 	    
 	    Mono<Void> delete(Long id);
+	    
+	    Mono<Task> completeTask(Long id);
 
 
 }

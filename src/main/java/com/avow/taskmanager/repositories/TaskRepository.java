@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.stereotype.Component;
 
 import com.avow.taskmanager.models.Task;
+import com.avow.taskmanager.utils.TaskStatus;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -57,8 +58,14 @@ public class TaskRepository implements ITaskRepository {
 	    public  Mono<Void> delete(Long id) {
 	    	Mono<Task> value = Mono.just(DATA.remove(id));
 	       return value.then();
-	       
 	    }
+	    
+	    public Mono<Task> completeTask(Long id){
+	        Task task = DATA.get(id);
+	        task.setStatus(TaskStatus.completed.name());
+	        DATA.put(id, task);
+	        return Mono.just(task);
+	   }
 
 		
 

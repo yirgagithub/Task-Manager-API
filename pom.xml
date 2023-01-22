@@ -41,6 +41,7 @@
 		    <groupId>io.projectreactor.tools</groupId>
 		    <artifactId>blockhound</artifactId>
 		    <version>1.0.6.RELEASE</version>
+		    <scope>test</scope>
 		  </dependency>
 	</dependencies>
 
@@ -50,6 +51,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					 <skip>true</skip>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>

@@ -39,6 +39,9 @@ public class TaskService implements ITaskService {
 
     public void delete(Long id){
          iTaskRepository.delete(id);
-         
     }
+    
+    public Mono<Task> completeTask(Long id){
+       return iTaskRepository.completeTask(id);
+   }
 }
