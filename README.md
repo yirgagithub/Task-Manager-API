@@ -7,7 +7,9 @@
 3)  Then run it as Spring Boot Application from Spring tool suite.
 
 **use docker**
-1) `docker build -t task-manager .`
-2) `docker run -p 8080:8080 task-manager`
+
+1) `mvn package -Dmaven.test.skip`
+2) `docker build -t task-manager .`
+4) `docker run -p 8080:8080 task-manager`
 
 
